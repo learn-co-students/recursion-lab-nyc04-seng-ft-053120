@@ -18,14 +18,15 @@ function reverseString(string, index = string.length - 1) {
     }
 }
 
-function isPalindrome(string, leftIndex = 0, rightIndex = string.length - 1) {
-    if (string[leftIndex] !== string[rightIndex]) {
+function isPalindrome(string) {
+    if (string[0] !== string[string.length-1]) {
         return false
     }
-    if (leftIndex === rightIndex || leftIndex === rightIndex - 1) {
+
+    if (string.length === 1) {
         return true
     } else {
-        return isPalindrome(string, leftIndex + 1, rightIndex - 1)
+        return isPalindrome(string.slice(1, string.length-1))
     }
 }
 
